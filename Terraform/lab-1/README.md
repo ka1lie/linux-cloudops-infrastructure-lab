@@ -12,7 +12,7 @@ Clone this repository to your local machine
 
 ```bash
 git clone https://github.com/ka1lie/linux-cloudops-infrastructure-lab
-cd linux-cloudops-infrastructure-lab
+cd linux-cloudops-infrastructure-lab/Terraform/lab-1
 ```
 Initialize Terraform
 

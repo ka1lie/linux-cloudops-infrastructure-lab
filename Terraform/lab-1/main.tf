@@ -37,7 +37,7 @@ resource "docker_container" "whoami_container" {
 resource "local_file" "defaults_config" {
   filename = "${path.module}/defaults.conf"
   content  = templatefile("${path.module}/defaults.conf.tftpl", {
-    container_name = docker_container.nginx_container.name
+    container_name = docker_container.whoami_container.name
   })
   directory_permission = "0755"
   file_permission = "0644"

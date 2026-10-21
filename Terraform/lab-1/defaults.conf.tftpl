@@ -1,0 +1,9 @@
+upstream whoami {
+    server ${container_name}:80;
+}
+
+server {
+    location / {
+        proxy_pass http://whoami;
+    }
+}

@@ -21,7 +21,7 @@ resource "docker_container" "nginx_container" {
     name = docker_network.create_network.name
   }
   volumes {
-    container_path = "/etc/nginx/conf.d/defaults.conf"
+    container_path = "/etc/nginx/conf.d/default.conf"
     host_path = abspath(local_file.defaults_config.filename)
   }
   depends_on = [local_file.defaults_config]

@@ -54,11 +54,20 @@ resource "local_file" "defaults_config" {
 }
 
 
+/*
 import {
-  to = docker.volume
+  to = docker_volume.test_volume
   identity = {
     name = "lab2-legacy-data"
   }
 }
+*/
 
-resource "docker_volume" "test_volume" {}
+# resource "docker_volume" "test_volume" {}
+
+resource "docker_volume" "application_data" {}
+
+moved {
+  from = docker_volume.test_volume
+  to = docker_volume.application_data
+}

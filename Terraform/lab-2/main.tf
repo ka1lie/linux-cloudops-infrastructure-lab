@@ -52,3 +52,13 @@ resource "local_file" "defaults_config" {
   directory_permission = "0755"
   file_permission = "0644"
 }
+
+
+import {
+  to = docker.volume
+  identity = {
+    name = "lab2-legacy-data"
+  }
+}
+
+resource "docker_volume" "test_volume" {}

@@ -10,6 +10,6 @@ output whoami_container_name {
 
 output api_token {
   description = "Test api tolen output"
-  value = "test-token-api-123456"
+  value = terraform_data.api_token
   sensitive = true
 }

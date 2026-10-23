@@ -71,3 +71,10 @@ moved {
   from = docker_volume.test_volume
   to = docker_volume.application_data
 }
+
+resource "terraform_data" "api_token" {
+  store {
+    input = "test-value-api-123456"
+    sensitive = true
+  }
+}

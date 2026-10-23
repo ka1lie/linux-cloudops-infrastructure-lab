@@ -6,8 +6,8 @@ resource "docker_image" "whoami_image" {
   name = "traefik/whoami:latest"
 }
 
-resource "docker_image" "alpine_image" {
-  name = "alpine:latest"
+resource "docker_image" "memcached_image" {
+  name = "memcached:latest"
 }
 
 resource "docker_network" "create_network" {
@@ -39,9 +39,9 @@ resource "docker_container" "whoami_container" {
   }
 }
 
-resource "docker_container" "alpine_container" {
+resource "docker_container" "memcached_container" {
   name = "lab2-test-container"
-  image = docker_image.alpine_image.image_id
+  image = docker_image.memcached_image.image_id
 }
 
 resource "local_file" "defaults_config" {

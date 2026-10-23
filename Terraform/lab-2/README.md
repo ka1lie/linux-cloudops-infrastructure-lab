@@ -63,5 +63,7 @@ Next we created a new resource with test api and disallow visible through consol
 
 Q: What's the difference between terraform plan and with flag -refresh-only? Why using terraform plan -refresh=false can lead to uncosistent state?
 
-A: If we use refresh-only flag we only looked at changes outside of our Terraform scripts looking at a real infrastructure, and update or tfstate. If we use -resfresh=false we skipping Terraform state sync with real infra which leat us to an uncomplete plan
+A: If we use refresh-only flag we only looked at changes outside of our Terraform scripts looking at a real infrastructure and show us what will be synced. If we use -resfresh=false we skipping Terraform state sync with real infra which leat us to an uncomplete plan
 
+Q: Why flag sensitive = true does not lead us to a secure storage in tfstate file?
+A: It helps to prevent leak sensitive data directly from console or store as a plain text in some logs. We should use ephemeral = true to use some sensitive data only once at a Terraform run without storing in a tfstate file

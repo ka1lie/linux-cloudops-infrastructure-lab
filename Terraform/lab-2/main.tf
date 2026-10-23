@@ -65,7 +65,9 @@ import {
 
 # resource "docker_volume" "test_volume" {}
 
-resource "docker_volume" "application_data" {}
+resource "docker_volume" "application_data" {
+  name = "lab2-legacy-data"
+}
 
 moved {
   from = docker_volume.test_volume

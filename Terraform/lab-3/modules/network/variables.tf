@@ -8,7 +8,6 @@ variable "environment" {
   }
 }
 
-
 variable "vpc_subnet" {
   type = string
   description = "Ender your VPC subnet address with CIRD: "

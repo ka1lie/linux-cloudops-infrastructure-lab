@@ -47,5 +47,4 @@ resource "aws_eip" "attach_public_ip" {
   instance = aws_instance.create_ec2_server.id
   associate_with_private_ip = tolist(aws_network_interface.get_ip.private_ips)[0]
 
-  depends_on = [var.igw_id]
 }

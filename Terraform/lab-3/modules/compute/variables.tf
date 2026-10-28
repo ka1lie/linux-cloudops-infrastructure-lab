@@ -24,21 +24,6 @@ variable "subnet_public_id" {
   description = "VPC public subnet ID"
 }
 
-variable "subnet_private_id" {
-  type = string
-  description = "VPC public subnet ID"
-}
-
-variable "vpc_id" {
-  type = string
-  description = "VPC id"
-}
-
-variable "igw_id" {
-  type = string
-  description = "IGW id"
-}
-
 variable "sg_id" {
   type = string
   description = "Security Group id"

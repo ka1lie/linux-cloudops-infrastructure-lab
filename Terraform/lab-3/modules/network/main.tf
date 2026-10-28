@@ -1,6 +1,7 @@
 resource "aws_vpc" "create_vpc" {
   cidr_block = var.vpc_subnet
   region = var.aws_region
+  enable_dns_hostnames = true
   
   tags = {
     Name = "vpc-${var.environment}"
@@ -84,7 +85,7 @@ resource "aws_security_group" "security_group" {
     from_port = 80
     to_port = 80
     protocol = "tcp"
-    cidr_blocks = ["5.77.130.185/32"]
+    cidr_blocks = [var.client_cidr]
   }
   tags = {
     Name = "sg-${var.environment}"

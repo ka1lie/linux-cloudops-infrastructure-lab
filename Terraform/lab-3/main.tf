@@ -1,6 +1,9 @@
 module "network" {
     source = "./modules/network"
     environment = var.environment
+    client_cidr = var.client_cidr
+    aws_AZ_region = var.aws_AZ_region
+    aws_region = var.aws_region
 }
 
 module "compute" {

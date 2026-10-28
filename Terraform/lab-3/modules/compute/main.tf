@@ -13,7 +13,6 @@ data "aws_ami" "amazon_linux_image" {
 
 resource "aws_network_interface" "get_ip" {
   subnet_id   = var.subnet_public_id
-  private_ips = ["10.42.10.100"]
   security_groups = [var.sg_id]
 
   tags = {
@@ -31,7 +30,7 @@ resource "aws_instance" "create_ec2_server" {
 
   root_block_device {
     volume_type = "gp3"
-    volume_size = "10"
+    volume_size = 12
     encrypted = "true"
   }
   metadata_options {
@@ -47,4 +46,6 @@ resource "aws_eip" "attach_public_ip" {
   domain = "vpc"
   instance = aws_instance.create_ec2_server.id
   associate_with_private_ip = tolist(aws_network_interface.get_ip.private_ips)[0]
+
+  depends_on = [var.igw_id]
 }
